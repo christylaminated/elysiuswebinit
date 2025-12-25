@@ -3,6 +3,12 @@
   "outputDirectory": "dist/public",
   "installCommand": "npm install",
   "devCommand": "npm run dev:client",
-  "framework": null
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ]
 }
 
