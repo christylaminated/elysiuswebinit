@@ -1,0 +1,110 @@
+Improve my existing Elysius Labs landing page so it is VA and clinical partner appropriate, elegant and scientific, and conceptually consistent. This is an edit, not a redesign. You must keep the current visual design, layout style, and especially the existing headband and eye mask imagery, composition, lighting, and card styling. Do not replace the product renders with generic placeholders or stock images. Keep the same aesthetic and visual hierarchy.
+
+Hard rules
+1) Mobile first, then scale to desktop
+2) Fully responsive and tested at 375px, 414px, 768px, 1024px, and 1440px widths
+3) No consumer coded language like waitlist, subscribe, preorder, shop, buy now, early adopters
+4) Do not use double hyphens anywhere in copy or code comments
+5) No medical claims, no FDA approval language, no diagnosis or treatment claims
+6) Every button must do something real, no dead clicks
+7) Preserve existing design assets and styling
+   - Keep the headband render exactly as used now
+   - Keep the eye mask render exactly as used now
+   - Keep their current crop, scale, aspect ratio, and placement
+   - Keep the current dark gradient background and aura effects
+   - Keep current fonts, spacing, and card shapes unless a change is needed purely for mobile responsiveness
+
+Navigation updates
+- Keep the same tabs: Technology, Products, Evidence, FAQ
+- Replace the top right button text from Join Waitlist to Pilot Access
+- Pilot Access button must scroll to a Pilot Access section near the bottom of the page
+
+CTA behavior updates
+- Primary CTA in the hero must be Pilot Access and scroll to the Pilot Access section
+- Secondary CTA in the hero must be View System Overview and scroll to The Restorative Loop section
+- Add microcopy under each CTA
+  Under Pilot Access: For VA programs, research collaborators, and clinical partners.
+  Under View System Overview: Closed-loop sensing to detection to guidance.
+
+Hero copy updates
+Replace the hero headline and subheadline with
+Headline: Real-time neurotechnology for restorative sleep.
+Subheadline: Elysius Labs monitors brain activity during sleep and delivers gentle, closed-loop sensory guidance to help stabilize disrupted sleep states without waking the user.
+
+Trust strip updates
+Replace trust strip items with
+Real-time EEG sensing
+Closed-loop intervention
+Built with clinical credibility
+
+System framing correction for Products section
+The current page makes the headband and mask look like separate products. Fix the copy and section framing so it is clear they are interfaces of one closed-loop system, with configurable guidance modalities selected by patient preference and tolerance. Keep the visuals exactly the same.
+- Rename the Products section header to Configurable System Interfaces
+- Add a short subheader under it:
+  One closed-loop neurotechnology system, delivered through patient-preferred interfaces.
+- Change the two cards to reflect system roles
+  Card 1 title: EEG Headband
+  Card 1 subtitle: Neural Sensing Interface
+  Card 1 description line: Primary signal acquisition for real-time sleep state detection.
+  Card 2 title: Guidance Mask
+  Card 2 subtitle: Guidance Interface Option
+  Card 2 description line: A configurable modality for closed-loop sensory guidance.
+- Rewrite the bullets so they are precise and credible, not marketing
+  EEG Headband bullets should emphasize signal quality, low latency telemetry, overnight ergonomics
+  Guidance Mask bullets should emphasize subtle sensory cues, minimal intrusion, selected by comfort and clinical context
+
+Remove FIG labeling
+If any visuals use FIG 01 or FIG 02 captions, remove them.
+Use either component names only or layer names only.
+Preferred captions
+EEG Sensor Array
+Guidance Mask
+
+Restorative Loop copy updates
+Keep the three steps Sense, Detect, Guide but rewrite to be lab like and VA credible
+Sense: Clinical-grade EEG sensors capture brain activity during sleep with high temporal resolution.
+Detect: The detection engine identifies markers of hyperarousal and nightmare-like disruption as they emerge.
+Guide: Subtle auditory, light, or haptic cues gently guide the brain back toward stable, restorative states.
+
+Evidence section change
+Keep Evidence as a main nav tab but improve it so it contains blog style updates without calling it a blog. Keep the same Evidence section styling, spacing, and background.
+Inside Evidence, create two subsections
+1) Foundations
+  One paragraph on scientific grounding and closed-loop rationale with cautious language
+2) Research Notes
+  A list of card entries that look like lab notes, not blog posts
+  Each card has title, date, 2 to 3 sentence summary, and a link style button View research note that opens a modal with more text
+Seed at least 3 example Research Notes with VA appropriate titles
+Do not use the word blog anywhere
+
+Pilot Access section
+Create a Pilot Access section near the bottom with a short form that matches the existing design language and button styles.
+Fields
+Name
+Organization
+Role
+Email
+Use case dropdown with options
+VA clinical pilot
+Research evaluation
+Clinical collaboration
+Other
+Submit button text: Request pilot access
+On submit show a confirmation message and store the submission locally for now
+No backend required but code should be easy to connect later
+
+Design requirements
+- Maintain the current neurotech lab aesthetic already present on the page
+- Do not change the headband and mask visuals, their placement, or their styling
+- Keep the existing aura and lighting effects
+- Use subtle motion only
+
+Mobile layout rules
+- On mobile, hero CTAs stack vertically with comfortable spacing and full width buttons
+- Microcopy must not wrap awkwardly or collide with buttons
+- Trust strip collapses into a vertical list or horizontal scroll row
+- Product cards stack in one column and images do not crop important areas
+- Ensure accessibility: large tap targets, focus states, aria labels
+
+Deliverable
+Return updated code that implements all copy changes, fixes the system framing, replaces waitlist language, removes FIG labels, adds Evidence subsections with Research Notes modal, adds a functional Pilot Access section, and ensures mobile friendly layout while preserving the current headband and eye mask design exactly.

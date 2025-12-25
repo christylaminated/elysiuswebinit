@@ -1,0 +1,86 @@
+Edit my existing Elysius Labs landing page to match a premium neurotechnology lab vibe for VA and clinical audiences. Keep the same overall structure and keep both products, the EEG headband and the guidance eye mask. The page must be elegant, scientific, calm, and credible, not a consumer sleep gadget brand.
+
+Hard requirements
+1) Mobile first design, then scale to desktop
+2) Fully responsive and tested at 375px, 414px, 768px, and 1024px widths
+3) Preserve these sections in this order
+   Navbar
+   Hero
+   The Restorative Loop (3 steps: Sense, Detect, Guide)
+   Designed as a Unified System (Headband and Mask cards)
+   Benefits (Pre-emptive, Non-Invasive, Signal Integrity, Clinical Roots)
+   Research and Science (Evidence and Whitepaper CTA)
+   Footer
+4) Keep both CTAs in the hero: Join Waitlist and See how it works
+5) Do not use double hyphens anywhere in the copy or code comments
+
+Tone and claims rules
+- Do not claim FDA approval, diagnosis, or treatment
+- Do not promise outcomes or cures
+- Use cautious, defensible phrasing such as informed by peer reviewed research and developed with a clinical pathway in mind
+- Keep language precise and scientific with minimal marketing fluff
+
+Hero rewrite required
+Replace the current hero headline and subheadline with the following
+Headline: Real-time neurotechnology for restorative sleep.
+Subheadline: Elysius Labs monitors brain activity during sleep and delivers gentle, closed-loop sensory guidance to help stabilize disrupted sleep states without waking the user.
+
+Hero microcopy required
+Under Join Waitlist button add: Early access for pilot programs and research partners.
+Under See how it works button add: Closed-loop sensing to detection to guidance.
+
+Trust strip rewrite required
+Replace the trust strip labels with
+Real-time EEG sensing
+Closed-loop intervention
+Built with clinical credibility
+
+The Restorative Loop rewrite required
+Rewrite the section copy to sound like a neurotech lab. Use these exact step headings and align the descriptions to them
+Sense: Clinical-grade EEG sensors capture brain activity during sleep with high temporal resolution.
+Detect: The detection engine identifies markers of hyperarousal and nightmare-like disruption as they emerge.
+Guide: Subtle auditory and light-based cues gently guide the brain back toward stable, restorative states.
+
+Products section rewrite required
+Rename the product subtitles to feel lab-like and system-level
+EEG Headband subtitle: The Sensing Layer
+Guidance Mask subtitle: The Intervention Layer
+Keep the product bullets but rewrite them to be more precise, credible, and less consumer marketing.
+
+Benefits section rewrite required
+Keep the four benefit titles but rewrite the descriptions to be more clinical and defensible
+Pre-emptive: Intervention occurs before full awakening to preserve natural sleep cycles.
+Non-Invasive: No shocks or abrupt stimulation. Only subtle cues designed for the sleeping brain.
+Signal Integrity: Engineered for reliable EEG capture in high-noise sleep environments.
+Clinical Roots: Informed by neuroscience research and developed with a clinical pathway in mind.
+
+Research section rewrite required
+Keep the structure but adjust the language to be VA safe
+- Use informed by peer reviewed research on sleep micro-architecture and closed-loop sensory stimulation
+- Replace any mention of trials with early internal evaluations suggest potential improvements in subjective sleep quality metrics
+- Keep the Read our whitepaper CTA
+
+Design requirements
+- Dark, calm background with subtle obsidian to indigo gradients
+- Halo or aura motif used sparingly behind product visuals
+- Avoid neon, avoid cyberpunk, avoid overly saturated colors
+- Use elegant typography with next/font. Clean sans serif for body and restrained serif for headings
+- Use plenty of whitespace and soft rounded cards with subtle borders
+- Subtle motion only. Gentle fade and rise on scroll, light floating on product visuals
+
+Mobile layout rules
+- On mobile, hero buttons must stack vertically with comfortable spacing
+- Hero text must never overlap product visuals
+- Trust strip must become a vertical list or a swipeable row
+- Product cards must stack in a single column with clear spacing
+- Increase font sizes and line height for readability on small screens
+- Ensure all buttons and inputs have large tap targets and clear focus states
+
+Implementation rules
+- Keep the project in Next.js App Router with TypeScript and Tailwind
+- Use Framer Motion for subtle reveals
+- Use semantic HTML and accessibility attributes
+- If product images are missing, show elegant placeholders labeled EEG Headband Render and Guidance Mask Render
+
+Deliverable
+Return the updated code for the landing page with the revised copy and mobile-friendly layout that looks like a real neurotechnology lab website for VA and clinical audiences.

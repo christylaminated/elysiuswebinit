@@ -1,0 +1,70 @@
+Build a premium, modern landing page for a neurotechnology startup named “Elysius Labs”.
+
+Goal:
+Create a visually striking, conversion-focused landing page for a wearable sleep system that uses real-time brainwave sensing and gentle cues to guide the brain back to restful sleep. The page MUST show BOTH products: (1) an EEG headband and (2) an eye mask. The design should feel sleek, mythic, and high-end (“neurotech meets quiet luxury”), not “biohacker gadget”.
+
+Core message (use this language style):
+- Short, confident, elegant, founder-grade.
+- Avoid heavy jargon. No cringe “optimize your sleep” bro-science tone.
+- Emphasize: real-time detection + intervention during sleep (closed-loop).
+
+Tech requirements:
+- Use Next.js (App Router) + TypeScript + Tailwind CSS.
+- Single-page landing (/, no extra routes).
+- Fully responsive (mobile-first).
+- Use Framer Motion for subtle section reveals and gentle floating/glow animations.
+- Use lucide-react icons.
+- Performance: optimized images, lazy-loading, minimal JS.
+- Accessibility: semantic HTML, good contrast, aria labels.
+
+Brand & visual style:
+- Palette: deep midnight/obsidian background with soft gradients (indigo/violet/pearl highlights). Keep it understated.
+- Typography: modern + elegant (e.g., Inter + a classy serif for headings). Use next/font.
+- Layout: lots of whitespace, smooth rounded cards, subtle borders, soft shadows.
+- Add a tasteful “aura”/“halo” motif (concentric rings) behind product renders.
+
+Page sections (must include all):
+1) Top Nav
+   - Left: “Elysius Labs” wordmark
+   - Right: links (Technology, Products, Evidence, FAQ) + primary CTA button “Join Waitlist”
+
+2) HERO (most important)
+   - Headline options (pick best):
+     A) “Fix sleep while you’re sleeping.”
+     B) “Real-time neurotechnology for restorative sleep.”
+     C) “When sleep goes wrong, Elysius guides it back.”
+   - Subheadline: explain in 1–2 lines: monitors brainwaves in real time and delivers gentle cues (sound/light) to steer away from stress/nightmare states.
+   - Two product visuals shown side-by-side or layered:
+     - EEG Headband (primary)
+     - Eye Mask (secondary)
+   - Buttons:
+     - Primary: “Join Waitlist”
+     - Secondary: “See how it works”
+   - Add a small trust strip under buttons with 3 items (icons + text):
+     - “Real-time brainwave sensing”
+     - “Closed-loop cues during sleep”
+     - “Designed for clinical credibility”
+
+3) “How it works” (simple 3-step pipeline)
+   Step 1: Sense (EEG signals)
+   Step 2: Detect (nightmare/stress signatures)
+   Step 3: Guide (gentle cues to return to restful sleep)
+   Include a simple animated diagram (horizontal on desktop, vertical on mobile) using divs/SVG (no external images required).
+
+4) Products section (MUST show BOTH clearly)
+   - Two product cards:
+     - “EEG Headband” with 3 bullets (Comfort-first, real-time sensing, wireless-ready)
+     - “Eye Mask” with 3 bullets (Light/audio cues, comfortable fit, sleep-safe design)
+   - Include “Designed as a system” note.
+
+5) “Why Elysius Labs” (3–4 benefit cards)
+   - Examples:
+     - “Intervene before full awakening”
+     - “Gentle, non-invasive cues”
+     - “Built for high-signal environments (sleep)”
+     - “A path from clinical wedge → broader sleep market”
+   Keep it grounded and credible.
+
+6) Evidence / Credibility section
+   - Do NOT claim FDA approval.
+   - Use cautious language: “grounded in sleep neuroscience”, “informed by peer-reviewed research”, “clinic
