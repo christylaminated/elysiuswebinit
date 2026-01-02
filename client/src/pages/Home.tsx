@@ -351,7 +351,7 @@ export default function Home() {
             <div>
               <h2 className="text-3xl md:text-4xl font-serif mb-6">Request Pilot Access</h2>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                We are currently accepting inquiries from VA programs, clinical research partners, and academic institutions for our upcoming pilot studies.
+                We are currently accepting pilot study inquiries from VA programs, clinical research partners, and academic institutions evaluating closed-loop neurotechnology for sleep and stress-related conditions.
               </p>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -360,7 +360,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-medium text-white mb-1">Documentation</h4>
-                    <p className="text-sm text-muted-foreground">Full technical specifications available upon approval.</p>
+                    <p className="text-sm text-muted-foreground">Detailed technical specifications, system architecture, and safety constraints are provided as part of the pilot evaluation process.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -369,7 +369,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-medium text-white mb-1">IRB Support</h4>
-                    <p className="text-sm text-muted-foreground">We provide support for institutional review board submissions.</p>
+                    <p className="text-sm text-muted-foreground">Clinical partners own the IRB submission. Elysius provides technical documentation and collaborates closely to support submissions and respond to IRB technical questions.</p>
                   </div>
                 </div>
               </div>
