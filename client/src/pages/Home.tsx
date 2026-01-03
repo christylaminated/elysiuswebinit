@@ -186,9 +186,9 @@ export default function Home() {
       <section id="technology" className="py-32 relative border-t border-white/5">
         <div className="container mx-auto px-6">
           <div className="text-center mb-24">
-            <h2 className="text-3xl md:text-5xl font-serif mb-6">The Restorative Loop</h2>
+            <h2 className="text-3xl md:text-5xl font-serif mb-6">How Elysius Works</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              A precise, closed-loop biofeedback system designed for active sleep protection.
+              EEG → Proprietary AI Software → Real-Time Cues
             </p>
           </div>
 
@@ -199,21 +199,21 @@ export default function Home() {
             {[
               {
                 step: "01",
-                title: "Sense",
+                title: "EEG Sensing",
                 icon: Activity,
-                desc: "Clinical-grade EEG sensors capture brain activity during sleep with high temporal resolution."
+                desc: "Clinical-grade EEG monitors brain activity throughout the night."
               },
               {
                 step: "02",
-                title: "Detect",
+                title: "Proprietary AI Software",
                 icon: BrainCircuit,
-                desc: "The detection engine identifies markers of hyperarousal and nightmare-like disruption as they emerge."
+                desc: "Elysius' software analyzes EEG signals in real time to detect patterns associated with negative or disruptive sleep experiences, such as heightened arousal or stress-linked activity."
               },
               {
                 step: "03",
-                title: "Guide",
+                title: "Real-Time Sensory Cues",
                 icon: Waves,
-                desc: "Subtle auditory, light, or haptic cues gently guide the brain back toward stable, restorative states."
+                desc: "When such patterns are detected, Elysius can trigger subtle sensory cues (e.g., audio) designed to help guide the user back toward stable sleep without waking them. This is a closed-loop system: the brain signal determines if and when cues are delivered."
               }
             ].map((item, i) => (
               <motion.div 
@@ -240,9 +240,9 @@ export default function Home() {
       <section id="products" className="py-32 bg-white/2">
         <div className="container mx-auto px-6">
           <div className="mb-20">
-            <h2 className="text-4xl md:text-6xl font-serif mb-6">Configurable System Interfaces</h2>
-            <p className="text-xl text-muted-foreground max-w-xl">
-              One closed-loop neurotechnology system, delivered through patient-preferred interfaces.
+            <h2 className="text-4xl md:text-6xl font-serif mb-6">Hardware (Same System, Different Form Factors)</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl">
+              All Elysius devices use the same EEG sensing approach and the same proprietary AI software. Device selection is based on comfort and deployment context.
             </p>
           </div>
 
@@ -256,23 +256,22 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-80" />
                 <div className="absolute bottom-8 left-8">
                   <h3 className="text-3xl font-serif text-white mb-2">EEG Headband</h3>
-                  <p className="text-white/70 font-mono text-sm uppercase tracking-wider">Neural Sensing Interface</p>
                 </div>
               </div>
               <div className="p-8 flex-1">
-                <p className="text-sm font-medium text-white mb-6">Primary signal acquisition for real-time sleep state detection.</p>
+                <p className="text-sm font-medium text-white mb-6">A frontal EEG device worn across the forehead during sleep.</p>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-                    <span className="text-muted-foreground">High-fidelity signal quality</span>
+                    <span className="text-muted-foreground">Measures frontal EEG throughout the night</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-                    <span className="text-muted-foreground">Low-latency wireless telemetry</span>
+                    <span className="text-muted-foreground">Does not cover the eyes</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-                    <span className="text-muted-foreground">Overnight ergonomics for patient compliance</span>
+                    <span className="text-muted-foreground">Suitable for supervised use, research settings, or users who prefer not to wear an eye mask</span>
                   </li>
                 </ul>
               </div>
@@ -286,24 +285,23 @@ export default function Home() {
                 <img src={maskImage} alt="Mask" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-80" />
                 <div className="absolute bottom-8 left-8">
-                  <h3 className="text-3xl font-serif text-white mb-2">Guidance Mask</h3>
-                  <p className="text-white/70 font-mono text-sm uppercase tracking-wider">Guidance Interface Option</p>
+                  <h3 className="text-3xl font-serif text-white mb-2">EEG Eye Mask</h3>
                 </div>
               </div>
               <div className="p-8 flex-1">
-                <p className="text-sm font-medium text-white mb-6">A configurable modality for closed-loop sensory guidance.</p>
+                <p className="text-sm font-medium text-white mb-6">A frontal EEG device integrated into a sleep mask.</p>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-                    <span className="text-muted-foreground">Subtle sensory cues</span>
+                    <span className="text-muted-foreground">Measures frontal EEG throughout the night</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-                    <span className="text-muted-foreground">Minimal intrusion design</span>
+                    <span className="text-muted-foreground">Covers the eyes to block ambient light</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-                    <span className="text-muted-foreground">Selected by comfort and clinical context</span>
+                    <span className="text-muted-foreground">Designed for comfortable, at-home nightly use</span>
                   </li>
                 </ul>
               </div>
