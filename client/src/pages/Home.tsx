@@ -13,9 +13,9 @@ import {
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
-import headbandImage from "@assets/generated_images/sleek_eeg_headband_product_shot.png";
-import maskImage from "@assets/generated_images/premium_sleep_eye_mask_product_shot.png";
-import auraImage from "@assets/generated_images/abstract_aura_halo_background.png";
+const headbandImage = "/generated_images/sleek_eeg_headband_product_shot.png";
+const maskImage = "/generated_images/premium_sleep_eye_mask_product_shot.png";
+const auraImage = "/generated_images/abstract_aura_halo_background.png";
 
 
 export default function Home() {
@@ -249,16 +249,16 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-8">
             <motion.div 
               whileHover={{ y: -5 }}
-              className="glass-card rounded-3xl overflow-hidden group flex flex-col"
+              className="rounded-3xl overflow-hidden group flex flex-col"
             >
-              <div className="aspect-[16/9] overflow-hidden relative">
+              <div className="aspect-[16/9] overflow-hidden relative rounded-3xl">
                 <img src={headbandImage} alt="Headband" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-80" />
                 <div className="absolute bottom-8 left-8">
                   <h3 className="text-3xl font-serif text-white mb-2">EEG Headband</h3>
                 </div>
               </div>
-              <div className="p-8 flex-1">
+              <div className="pt-8 flex-1">
                 <p className="text-sm font-medium text-white mb-6">A frontal EEG device worn across the forehead during sleep.</p>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
@@ -279,16 +279,16 @@ export default function Home() {
 
             <motion.div 
               whileHover={{ y: -5 }}
-              className="glass-card rounded-3xl overflow-hidden group flex flex-col"
+              className="rounded-3xl overflow-hidden group flex flex-col"
             >
-              <div className="aspect-[16/9] overflow-hidden relative">
+              <div className="aspect-[16/9] overflow-hidden relative rounded-3xl">
                 <img src={maskImage} alt="Mask" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-80" />
                 <div className="absolute bottom-8 left-8">
                   <h3 className="text-3xl font-serif text-white mb-2">EEG Eye Mask</h3>
                 </div>
               </div>
-              <div className="p-8 flex-1">
+              <div className="pt-8 flex-1">
                 <p className="text-sm font-medium text-white mb-6">A frontal EEG device integrated into a sleep mask.</p>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
