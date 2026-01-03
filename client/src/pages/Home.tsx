@@ -240,7 +240,7 @@ export default function Home() {
       <section id="products" className="py-32 bg-white/2">
         <div className="container mx-auto px-6">
           <div className="mb-20">
-            <h2 className="text-4xl md:text-6xl font-serif mb-6">Hardware (Same System, Different Form Factors)</h2>
+            <h2 className="text-4xl md:text-6xl font-serif mb-6">EEG Wearables</h2>
             <p className="text-xl text-muted-foreground max-w-3xl">
               All Elysius devices use the same EEG sensing approach and the same proprietary AI software. Device selection is based on comfort and deployment context.
             </p>
