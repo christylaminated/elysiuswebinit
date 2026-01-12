@@ -13,7 +13,6 @@ import {
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
-const headbandImage = "/generated_images/sleek_eeg_headband_product_shot.png";
 const maskImage = "/generated_images/premium_sleep_eye_mask_product_shot.png";
 const auraImage = "/generated_images/abstract_aura_halo_background.png";
 
@@ -22,7 +21,6 @@ export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { scrollY } = useScroll();
   const heroOpacity = useTransform(scrollY, [0, 500], [1, 0]);
-  const heroScale = useTransform(scrollY, [0, 500], [1, 0.95]);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -33,26 +31,21 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-white/5">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between">
           <Link href="/">
-            <a className="font-serif text-2xl tracking-tight font-medium hover:opacity-80 transition-opacity">
+            <a className="text-xl tracking-tight font-semibold hover:opacity-80 transition-opacity">
               Elysius Labs
             </a>
           </Link>
 
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
-            <button onClick={() => scrollToSection('technology')} className="hover:text-foreground transition-colors">Technology</button>
-            <button onClick={() => scrollToSection('products')} className="hover:text-foreground transition-colors">Products</button>
-            <Button 
-              onClick={() => scrollToSection('pilot-access')}
-              className="rounded-full px-6 bg-white text-black hover:bg-gray-200 border-none"
-            >
-              Pilot Access
-            </Button>
+            <button onClick={() => scrollToSection('system')} className="hover:text-foreground transition-colors">System</button>
+            <button onClick={() => scrollToSection('hardware')} className="hover:text-foreground transition-colors">Hardware</button>
+            <button onClick={() => scrollToSection('access')} className="hover:text-foreground transition-colors">Access</button>
           </div>
 
           <button 
@@ -70,11 +63,11 @@ export default function Home() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="md:hidden absolute top-20 left-0 w-full bg-background border-b border-white/10 p-6 flex flex-col gap-6 z-50 shadow-2xl"
+              className="md:hidden absolute top-20 left-0 w-full bg-background border-b border-white/10 p-6 flex flex-col gap-4"
             >
-              <button onClick={() => scrollToSection('technology')} className="text-left py-2">Technology</button>
-              <button onClick={() => scrollToSection('products')} className="text-left py-2">Products</button>
-              <Button onClick={() => scrollToSection('pilot-access')} className="w-full rounded-full bg-white text-black">Pilot Access</Button>
+              <button onClick={() => scrollToSection('system')} className="text-left py-2">System</button>
+              <button onClick={() => scrollToSection('hardware')} className="text-left py-2">Hardware</button>
+              <button onClick={() => scrollToSection('access')} className="text-left py-2">Access</button>
             </motion.div>
           )}
         </AnimatePresence>
@@ -82,138 +75,114 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative min-h-[95vh] flex items-center pt-28 pb-16 overflow-hidden">
-        {/* Background Elements */}
+        {/* Background Layer */}
         <div className="absolute inset-0 z-0">
           <img 
             src={auraImage} 
-            alt="Background Aura" 
-            className="w-full h-full object-cover opacity-30 mix-blend-screen"
+            alt="" 
+            className="w-full h-full object-cover opacity-20 mix-blend-screen"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/90 to-background" />
         </div>
 
-        <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            style={{ opacity: heroOpacity, scale: heroScale }}
+            style={{ opacity: heroOpacity }}
             className="z-20"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif font-medium leading-[1.1] mb-8 text-balance">
-              Real-time neurotechnology for restorative sleep.
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] mb-8">
+              Closed-loop neurotechnology for sleep intervention.
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-lg font-light leading-relaxed">
-              Elysius Labs monitors brain activity during sleep and delivers gentle, closed-loop sensory guidance to help stabilize disrupted sleep states without waking the user.
+            <p className="text-base md:text-lg text-muted-foreground mb-12 max-w-lg leading-relaxed">
+              Frontal EEG sensing with real-time AI-driven intervention. Designed for clinical research, VA programs, and longitudinal sleep monitoring.
             </p>
             
-            <div className="flex flex-col gap-8 mb-16 max-w-md">
-              <div className="flex flex-col gap-2">
-                <Button 
-                  size="lg" 
-                  onClick={() => scrollToSection('pilot-access')}
-                  className="rounded-full text-base h-12 px-8 bg-white text-black hover:bg-gray-200 border-none w-full md:w-auto"
-                >
-                  Pilot Access
-                </Button>
-                <span className="text-xs text-muted-foreground ml-2">For VA programs, research collaborators, and clinical partners.</span>
-              </div>
-              
-              <div className="flex flex-col gap-2">
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  onClick={() => scrollToSection('technology')}
-                  className="rounded-full text-base h-12 px-8 border-white/20 hover:bg-white/5 w-full md:w-auto"
-                >
-                  View System Overview
-                </Button>
-                <span className="text-xs text-muted-foreground ml-2">Closed-loop sensing to detection to guidance.</span>
-              </div>
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <Button 
+                size="lg" 
+                onClick={() => scrollToSection('access')}
+                className="text-sm h-11 px-6 bg-white text-black hover:bg-gray-200"
+              >
+                Pilot Program Access
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                onClick={() => scrollToSection('system')}
+                className="text-sm h-11 px-6 border-white/20 hover:bg-white/5"
+              >
+                System Architecture
+              </Button>
             </div>
 
-            {/* Trust Strip */}
-            <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm text-muted-foreground border-t border-white/10 pt-8 overflow-x-auto md:overflow-visible pb-4 md:pb-0 scrollbar-none">
-              <div className="flex items-center gap-2 whitespace-nowrap">
-                <Activity className="w-4 h-4 text-primary shrink-0" />
-                <span>Real-time EEG sensing</span>
+            {/* Trust Indicators */}
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 text-xs text-muted-foreground border-t border-white/5 pt-6">
+              <div className="flex items-center gap-2">
+                <Activity className="w-3.5 h-3.5 text-primary" />
+                <span>Clinical-grade EEG</span>
               </div>
-              <div className="flex items-center gap-2 whitespace-nowrap">
-                <BrainCircuit className="w-4 h-4 text-primary shrink-0" />
-                <span>Closed-loop intervention</span>
+              <div className="flex items-center gap-2">
+                <BrainCircuit className="w-3.5 h-3.5 text-primary" />
+                <span>Closed-loop AI</span>
               </div>
-              <div className="flex items-center gap-2 whitespace-nowrap">
-                <ShieldCheck className="w-4 h-4 text-primary shrink-0" />
-                <span>Built with clinical credibility</span>
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="w-3.5 h-3.5 text-primary" />
+                <span>Research-grade platform</span>
               </div>
             </div>
           </motion.div>
 
-          {/* Hero Visuals */}
+          {/* Hero Product - Bare Image Integrated Into Background */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="relative h-[400px] lg:h-[600px] mt-10 lg:mt-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.2, delay: 0.3 }}
+            className="relative flex items-center justify-center lg:justify-end h-[350px] lg:h-[500px]"
           >
-            {/* Layered Products */}
-            <motion.div 
-              animate={{ y: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
-              className="absolute top-0 right-0 lg:right-10 w-3/4 lg:w-[400px] z-20"
-            >
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl glow-purple border border-white/10">
-                <img src={headbandImage} alt="Elysius Headband" className="object-cover w-full h-full" />
-                <div className="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent" />
-              </div>
-            </motion.div>
-
-            <motion.div 
-              animate={{ y: [0, 8, 0] }}
-              transition={{ repeat: Infinity, duration: 9, delay: 1, ease: "easeInOut" }}
-              className="absolute bottom-10 lg:bottom-20 left-0 w-3/4 lg:w-[380px] z-10"
-            >
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-                <img src={maskImage} alt="Elysius Eye Mask" className="object-cover w-full h-full" />
-                <div className="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent" />
-              </div>
-            </motion.div>
+            <motion.img 
+              src={maskImage} 
+              alt="EEG eye mask hardware interface"
+              animate={{ y: [0, -8, 0] }}
+              transition={{ repeat: Infinity, duration: 10, ease: "easeInOut" }}
+              className="w-full max-w-[450px] lg:max-w-[600px] h-auto object-contain opacity-95"
+              style={{ filter: "drop-shadow(0 0 80px rgba(139, 92, 246, 0.08))" }}
+            />
           </motion.div>
         </div>
       </section>
 
-      {/* How it Works - The Loop */}
-      <section id="technology" className="py-32 relative border-t border-white/5">
+      {/* System Architecture */}
+      <section id="system" className="py-24 relative border-t border-white/5">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-24">
-            <h2 className="text-3xl md:text-5xl font-serif mb-6">How Elysius Works</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              EEG → Proprietary AI Software → Real-Time Cues
+          <div className="max-w-3xl mb-20">
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">System Architecture</h2>
+            <p className="text-muted-foreground text-sm">
+              Continuous EEG acquisition, real-time pattern detection, and adaptive sensory intervention.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 relative">
-            {/* Connecting Line */}
-            <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent hidden md:block" />
-
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl">
             {[
               {
                 step: "01",
-                title: "EEG Sensing",
+                title: "Frontal EEG Sensing",
                 icon: Activity,
-                desc: "Clinical-grade EEG monitors brain activity throughout the night."
+                desc: "Continuous frontal EEG acquisition throughout sleep. Clinical-grade signal fidelity engineered for longitudinal home use."
               },
               {
                 step: "02",
-                title: "Proprietary AI Software",
+                title: "Real-Time Pattern Detection",
                 icon: BrainCircuit,
-                desc: "Elysius' software analyzes EEG signals in real time to detect patterns associated with negative or disruptive sleep experiences, such as heightened arousal or stress-linked activity."
+                desc: "Proprietary AI detects arousal patterns, stress-linked neural signatures, and sleep state instability in real time."
               },
               {
                 step: "03",
-                title: "Real-Time Sensory Cues",
+                title: "Closed-Loop Intervention",
                 icon: Waves,
-                desc: "When such patterns are detected, Elysius can trigger subtle sensory cues (e.g., audio) designed to help guide the user back toward stable sleep without waking them. This is a closed-loop system: the brain signal determines if and when cues are delivered."
+                desc: "Subtle auditory cues triggered by detected patterns. Intervention timing determined by neural signal state, not schedule."
               }
             ].map((item, i) => (
               <motion.div 
@@ -221,186 +190,153 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.2 }}
-                className="relative z-10 bg-background border border-white/10 p-8 rounded-2xl hover:border-primary/30 transition-colors group"
+                transition={{ delay: i * 0.15 }}
+                className="border border-white/10 p-6 bg-white/[0.02]"
               >
-                <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                  <item.icon className="w-6 h-6 text-primary" />
+                <div className="w-10 h-10 bg-white/5 flex items-center justify-center mb-5">
+                  <item.icon className="w-5 h-5 text-primary" />
                 </div>
-                <div className="font-mono text-primary/50 text-sm mb-2">{item.step}</div>
-                <h3 className="text-2xl font-serif mb-4">{item.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                <div className="font-mono text-primary/40 text-xs mb-3 tracking-wider">{item.step}</div>
+                <h3 className="text-lg font-semibold mb-3 tracking-tight">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Products Section */}
-      <section id="products" className="py-32 bg-white/2">
+      {/* Hardware Interface */}
+      <section id="hardware" className="py-24 border-t border-white/5">
         <div className="container mx-auto px-6">
-          <div className="mb-20">
-            <h2 className="text-4xl md:text-6xl font-serif mb-6">EEG Wearables</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl">
-              All Elysius devices use the same EEG sensing approach and the same proprietary AI software. Device selection is based on comfort and deployment context.
-            </p>
-          </div>
+          <div className="max-w-5xl mx-auto">
+            <div className="mb-16">
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">Neural Sensing Interface</h2>
+              <p className="text-sm text-muted-foreground max-w-2xl">
+                Frontal EEG wearable for nightly operation. Integrated sensor array, onboard processing, and wireless data transmission.
+              </p>
+            </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            <motion.div 
-              whileHover={{ y: -5 }}
-              className="rounded-3xl overflow-hidden group flex flex-col"
-            >
-              <div className="aspect-[16/9] overflow-hidden relative rounded-3xl">
-                <img src={headbandImage} alt="Headband" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-80" />
-                <div className="absolute bottom-8 left-8">
-                  <h3 className="text-3xl font-serif text-white mb-2">EEG Headband</h3>
-                </div>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <img 
+                  src={maskImage} 
+                  alt=""
+                  className="w-full h-auto opacity-90"
+                />
               </div>
-              <div className="pt-8 flex-1">
-                <p className="text-sm font-medium text-white mb-6">A frontal EEG device worn across the forehead during sleep.</p>
-                <ul className="space-y-4">
+              <div>
+                <h3 className="text-sm font-semibold mb-6 tracking-tight text-muted-foreground">Interface Capabilities</h3>
+                <ul className="space-y-4 text-sm text-muted-foreground">
                   <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-                    <span className="text-muted-foreground">Measures frontal EEG throughout the night</span>
+                    <div className="w-1 h-1 rounded-full bg-primary mt-2 shrink-0" />
+                    <span>Frontal electrode array for continuous signal acquisition</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-                    <span className="text-muted-foreground">Does not cover the eyes</span>
+                    <div className="w-1 h-1 rounded-full bg-primary mt-2 shrink-0" />
+                    <span>Integrated light occlusion for ambient control</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-                    <span className="text-muted-foreground">Suitable for supervised use, research settings, or users who prefer not to wear an eye mask</span>
+                    <div className="w-1 h-1 rounded-full bg-primary mt-2 shrink-0" />
+                    <span>Wireless transmission and onboard audio delivery</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-1 h-1 rounded-full bg-primary mt-2 shrink-0" />
+                    <span>Engineered for prolonged nightly wear</span>
                   </li>
                 </ul>
               </div>
-            </motion.div>
-
-            <motion.div 
-              whileHover={{ y: -5 }}
-              className="rounded-3xl overflow-hidden group flex flex-col"
-            >
-              <div className="aspect-[16/9] overflow-hidden relative rounded-3xl">
-                <img src={maskImage} alt="Mask" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-80" />
-                <div className="absolute bottom-8 left-8">
-                  <h3 className="text-3xl font-serif text-white mb-2">EEG Eye Mask</h3>
-                </div>
-              </div>
-              <div className="pt-8 flex-1">
-                <p className="text-sm font-medium text-white mb-6">A frontal EEG device integrated into a sleep mask.</p>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-                    <span className="text-muted-foreground">Measures frontal EEG throughout the night</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-                    <span className="text-muted-foreground">Covers the eyes to block ambient light</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-                    <span className="text-muted-foreground">Designed for comfortable, at-home nightly use</span>
-                  </li>
-                </ul>
-              </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Why Elysius */}
-      <section className="py-32">
+      {/* System Attributes */}
+      <section className="py-24 border-t border-white/5">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {[
               {
                 title: "Pre-emptive",
-                desc: "Intervention occurs before full awakening to preserve natural sleep cycles."
+                desc: "Intervention occurs before full arousal. Preserves sleep architecture and continuity."
               },
               {
-                title: "Non-Invasive",
-                desc: "No shocks or abrupt stimulation. Only subtle cues designed for the sleeping brain."
+                title: "Non-invasive",
+                desc: "Auditory cues calibrated for sleeping neural states. No stimulation or wake induction."
               },
               {
-                title: "Signal Integrity",
-                desc: "Engineered for reliable EEG capture in high-noise sleep environments."
+                title: "Signal fidelity",
+                desc: "Electrode design and signal processing optimized for home sleep environments."
               },
               {
-                title: "Clinical Roots",
-                desc: "Informed by neuroscience research and developed with a clinical pathway in mind."
+                title: "Research-grade",
+                desc: "System architecture designed with clinical validation and longitudinal research in mind."
               }
             ].map((card, i) => (
-              <div key={i} className="p-8 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors">
-                <h3 className="text-xl font-serif mb-4 text-white">{card.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{card.desc}</p>
+              <div key={i} className="p-6 border border-white/5 bg-white/[0.01]">
+                <h3 className="text-base font-semibold mb-3 tracking-tight">{card.title}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">{card.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-
       {/* Pilot Access Section */}
-      <section id="pilot-access" className="py-32 border-t border-white/5 bg-white/2">
+      <section id="access" className="py-24 border-t border-white/5">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="text-3xl md:text-4xl font-serif mb-6">Request Pilot Access</h2>
-              <p className="text-muted-foreground mb-8 leading-relaxed">
-                We are currently accepting pilot study inquiries from VA programs, clinical research partners, and academic institutions evaluating closed-loop neurotechnology for sleep and stress-related conditions.
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6">Pilot Program Access</h2>
+              <p className="text-sm text-muted-foreground mb-10 leading-relaxed">
+                Accepting pilot inquiries from VA programs, clinical research groups, and academic institutions evaluating closed-loop neurotechnology for sleep and trauma-related conditions.
               </p>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <FileText className="w-5 h-5 text-primary" />
+                  <div className="w-9 h-9 bg-white/5 flex items-center justify-center shrink-0">
+                    <FileText className="w-4 h-4 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-white mb-1">Documentation</h4>
-                    <p className="text-sm text-muted-foreground">Detailed technical specifications, system architecture, and safety constraints are provided as part of the pilot evaluation process.</p>
+                    <h4 className="text-sm font-semibold mb-1">Technical Documentation</h4>
+                    <p className="text-xs text-muted-foreground leading-relaxed">System specifications, signal processing architecture, and safety constraints provided during pilot evaluation.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <ShieldCheck className="w-5 h-5 text-primary" />
+                  <div className="w-9 h-9 bg-white/5 flex items-center justify-center shrink-0">
+                    <ShieldCheck className="w-4 h-4 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-white mb-1">IRB Support</h4>
-                    <p className="text-sm text-muted-foreground">Clinical partners own the IRB submission. Elysius provides technical documentation and collaborates closely to support submissions and respond to IRB technical questions.</p>
+                    <h4 className="text-sm font-semibold mb-1">IRB & Regulatory Support</h4>
+                    <p className="text-xs text-muted-foreground leading-relaxed">Technical documentation and engineering support for IRB submissions and regulatory review.</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col items-center justify-center text-center min-h-[400px]">
+            <div className="border border-white/10 p-8 flex flex-col items-center justify-center text-center min-h-[350px] bg-white/[0.01]">
               <div className="space-y-6">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
-                  <ArrowRight className="w-8 h-8 text-primary" />
+                <div className="w-12 h-12 bg-white/5 flex items-center justify-center mx-auto">
+                  <ArrowRight className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-serif mb-2">Ready to Get Started?</h3>
-                  <p className="text-muted-foreground text-sm mb-6">
-                    Schedule a call to discuss pilot access opportunities.
+                  <h3 className="text-lg font-semibold mb-2 tracking-tight">Schedule Consultation</h3>
+                  <p className="text-xs text-muted-foreground mb-6">
+                    30-minute technical review and pilot program discussion.
                   </p>
                 </div>
                 <Button
                   asChild
                   size="lg"
-                  className="bg-primary hover:bg-primary/90 text-white px-8"
+                  className="bg-white text-black hover:bg-gray-200 px-6 h-11 text-sm"
                 >
                   <a
                     href="https://calendly.com/christyptlam459/30min"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Book a Call
-                    <ArrowRight className="w-4 h-4 ml-2" />
+                    Book Call
+                    <ArrowRight className="w-3.5 h-3.5 ml-2" />
                   </a>
                 </Button>
-                <p className="text-xs text-muted-foreground">
-                  30-minute discovery call
-                </p>
               </div>
             </div>
           </div>
@@ -408,19 +344,17 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-20 border-t border-white/10 bg-black">
+      <footer className="py-16 border-t border-white/5 bg-black">
         <div className="container mx-auto px-6">
           <div className="flex flex-col items-center text-center">
-            <div>
-              <div className="font-serif text-2xl mb-4">Elysius Labs</div>
-              <p className="text-muted-foreground text-sm max-w-xs">
-                Next-generation neurotechnology for the modern mind.
-                <br />Based in San Francisco.
-              </p>
-            </div>
+            <div className="text-lg font-semibold mb-3 tracking-tight">Elysius Labs</div>
+            <p className="text-xs text-muted-foreground max-w-xs">
+              Closed-loop neurotechnology platform for sleep intervention.
+              <br />San Francisco, CA
+            </p>
           </div>
           
-          <div className="mt-20 pt-8 border-t border-white/10 flex justify-center items-center text-xs text-muted-foreground">
+          <div className="mt-12 pt-6 border-t border-white/5 flex justify-center items-center text-xs text-muted-foreground">
             <div>© 2025 Elysius Labs. All rights reserved.</div>
           </div>
         </div>
